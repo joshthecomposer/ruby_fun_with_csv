@@ -14,7 +14,7 @@
 In the console app, typing `1` then `return` will show the output of my solution for Challenge 1. The output should be:
 ```
 ================================================================================
-Challenge 1: The 3 most commonly used languages with respective number of parents: 
+Challenge 1: The 3 most commonly used languages with total number of parents: 
 Hindi: 57
 Urdu: 49
 English: 47
