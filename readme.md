@@ -84,12 +84,18 @@ Challenge 6:
 
     ================================================================================
     Challenge 6: List of sections and students in each section.
-    section_id: 150_25 course_name: Physics 9
+    section_id: 150_25
+    course_name: Physics 9
+
     student_ids: ["202", "207", "210", "212", ..., ...]
-    section_id: 150_26 course_name: Chemistry 9
+
+    --------------------------------------------------------------------------------
+    section_id: 150_26
+    course_name: Chemistry 9
+
     student_ids: ["200", "201", "208", "210", ..., ...]
-    ...
-    ...
+
+    --------------------------------------------------------------------------------
 
 Challenge 7:
 

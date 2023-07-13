@@ -46,6 +46,7 @@ module Challenge_Methods
             CSV_Handler.parse_csv_to_list_of_hashes("./data/students.csv")
                 .select {|student| parents_student_ids.include?(student["student_id"])}
         )
+        .map {|student| {student_id: student["student_id"], FirstName: student["FirstName"], LastName:student["LastName"]}}
     end
 
     def self.challenge_five()

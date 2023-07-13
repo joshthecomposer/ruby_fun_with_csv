@@ -1,9 +1,9 @@
 require_relative "challenge_methods"
-
+require "json"
 divider_len = 80
 
 big_divider = "=" * divider_len
-# small_divider = "-" * divider_len
+small_divider = "-" * divider_len
 
 puts "Please enter a number corresponding to a challenge (1-7) for bonuses enter b1 or b2, press x to quit.."
 while true
@@ -33,7 +33,6 @@ while true
                 data << "student_id: #{student["student_id"]}, first_name: #{student["FirstName"]}, last_name: #{student["LastName"]}"
             end
         when "5"
-            #TODO: really check this and verify that it is accurate. If so, go back and redo all functions with checks to see if the return is empty, if so output a standard message.
             title =  "List of sections with no students enrolled."
             Challenge_Methods.challenge_five.each do |section|
                 data << "section_id: #{section["section_id"]} course_name: #{section["course_name"]}"
@@ -41,7 +40,7 @@ while true
         when "6"
             title =  "List of sections and students in each section."
             Challenge_Methods.challenge_six.each do |section|
-                data << "section_id: #{section[:section_id]} course_name: #{section[:course_name]}\nstudent_ids: #{section[:student_ids]}"
+                data << "section_id: #{section[:section_id]}\ncourse_name: #{section[:course_name]}\n\nstudent_ids: #{section[:student_ids]}\n\n#{small_divider}"
             end
         when "7"
             title = "List of staff members attached to a section."
