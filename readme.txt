@@ -3,9 +3,9 @@ Ruby CSV Fun
 This console app was developed in Ruby 3.0.0
 
 -Instructions-
-1. [Go here](https://www.ruby-lang.org/en/documentation/installation/) and follow the instructions for installing Ruby on your system.
+1. Go to "https://www.ruby-lang.org/en/documentation/installation/" and follow the instructions for installing Ruby on your system.
 2. Clone this repo and cd into the root directory of the project.
-3. In your console, type `ruby main.rb`
+3. In your console, type "ruby main.rb"
 4. Now that that console app is started, follow the prompts to view my solutions.
 
 -Challenges-
@@ -21,5 +21,5 @@ In the console app, typing 1 then hitting return will show the output of my solu
 
 You can choose as many challenges as you want before quitting the app by typing x then return.
 
-## Dont forget the Bonuses!
+-Dont forget the Bonuses!-
 In the console app, if you type b1 or b2 followed by return you will see the respective bonus solutions.
