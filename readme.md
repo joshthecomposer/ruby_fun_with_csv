@@ -5,8 +5,6 @@
 ## Goals/Thoughts/Struggles
 I decided to take the challenge of doing this in Ruby, which I hadn't touched before this past weekend. I feel I have a much better grasp on Ruby syntax and I observed various similarities between Ruby and the other languages I know. The Enumerable helpers such as .map() and .select() were a welcome familiarity in particular. And the similarity to Python--my first language--was a welcome one.
 
-Challenge 5 and 
-
 ## Instructions
 1. [Go here](https://www.ruby-lang.org/en/documentation/installation/) and follow the instructions for installing Ruby on your system.
 2. Clone this repo and cd into the root directory of the project.
