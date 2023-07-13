@@ -21,7 +21,7 @@ English: 47
 ================================================================================
 Make another choice (1-7, b1, b2) or press x to quit...
 ```
-You can choose as many challenges as you want before quitting the app by typing `x` then `return`
+You can choose as many challenges as you want before quitting the app by typing `x` then `return`.
 
 ## Dont forget the Bonuses!
 In the console app, if you type `b1` or `b2` followed by `return` you will see the respective bonus solutions.

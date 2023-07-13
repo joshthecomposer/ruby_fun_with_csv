@@ -13,7 +13,7 @@ while true
     system "clear" or system "cls"
     case choice
         when "1"
-            title = "The 3 most commonly used languages with respective number of parents: "
+            title = "The 3 most commonly used languages with total number of parents: "
             Challenge_Methods.challenge_one.each do |language, count|
                 data << "#{language}: #{count}"
             end
