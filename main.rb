@@ -36,9 +36,7 @@ while true
             data = Challenge_Methods.challenge_seven
         when "b1"
             title = "Language mapping for language codes found in parents.csv"
-            Challenge_Methods.challenge_bonus_one.each do |lang, code|
-                data << "#{lang}: #{code}"
-            end
+            data = Challenge_Methods.challenge_bonus_one
         when "b2"
             title = "Phone numbers which appear in two or more files:"
             Challenge_Methods.challenge_bonus_two.each do |num, files|
@@ -55,8 +53,13 @@ while true
 
     puts big_divider
     puts "Challenge #{choice}: #{title}"
-    puts JSON.pretty_generate(data)
+    data = JSON.pretty_generate(data)
+    puts data
     puts big_divider
+
+    File.open("./outputs/Challenge_#{choice}.json","w") do |f|
+        f.write(data)
+    end
 
     puts "Make another choice (1-7, b1, b2) or press x to quit..."
 end

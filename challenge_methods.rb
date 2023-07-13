@@ -9,7 +9,13 @@ module Challenge_Methods
         parent_hash_arr.each do |parent|
             common_lang[parent["language"]] += 1
         end
-        return common_lang.sort_by {|k, v| -v}.first(3)
+        common_lang = common_lang
+            .sort_by {|k, v| -v}
+            .first(3)
+            .map do |arr|
+                { language: arr[0], parents: arr[1] }
+            end
+        return common_lang
     end
 
     def self.challenge_two()
@@ -105,7 +111,7 @@ module Challenge_Methods
             end
                 one_code = codes.find {|code| code["language"] == lang}
             if one_code
-                languages_with_codes << [lang, one_code["alpha2"]]
+                languages_with_codes << {language: lang, code: one_code["alpha2"]}
             end
         end
         return languages_with_codes

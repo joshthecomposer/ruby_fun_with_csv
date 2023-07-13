@@ -1,6 +1,6 @@
 # Ruby CSV Fun
 
-*This console app was developed in* **Ruby 3.0.0**
+*This console app was developed in* **Ruby 3.0.0*
 
 ## Goals/Thoughts/Struggles
 I decided to take the challenge of doing this in Ruby, which I hadn't touched before this past weekend. I feel I have a much better grasp on Ruby syntax and I observed various similarities between Ruby and the other languages I know. The Enumerable helpers such as .map() and .select() were a welcome familiarity in particular. And the similarity to Python--my first language--was a welcome one.
@@ -16,17 +16,11 @@ Challenge 5 and
 # Documentation
 
 ## Challenges
-In the console app, typing `1` then `return` will show the output of my solution for Challenge 1. The output should be:
-```
-================================================================================
-Challenge 1: The 3 most commonly used languages with total number of parents: 
-Hindi: 57
-Urdu: 49
-English: 47
-================================================================================
-Make another choice (1-7, b1, b2) or press x to quit...
-```
-Typing `2` then `return` will show challenge 2, etc.
+In the console app, typing `1` then `return` will show the output of my solution for Challenge 1.
+
+### !!! The output will print to the console, but a JSON will also be generated into the outputs folder with the corresponding challenge name. !!!
+
+Typing `2` then `return` will show/generate challenge 2, etc.
 
 You can choose as many challenges as you want before quitting the app by typing `x` then `return`.
 
@@ -41,18 +35,18 @@ Challenge 1:
     ================================================================================
     Challenge 1: The 3 most commonly used languages with total number of parents: 
     [
-        [
-            "Hindi",
-            57
-        ],
-        [
-            "Urdu",
-            49
-        ],
-        [
-            "English",
-            47
-        ]
+        {
+            "language": "Hindi",
+            "parents": 57
+        },
+        {
+            "language": "Urdu",
+            "parents": 49
+        },
+        {
+            "language": "English",
+            "parents": 47
+        }
     ]
     ================================================================================
 
@@ -155,11 +149,17 @@ Bonus 1:
     ================================================================================
     Challenge b1: Language mapping for language codes found in parents.csv
     [
-        "Hindi: hi",
-        "Spanish: es",
-        "Urdu: ur",
-        "English: en",
-        "Portuguese: pt"
+        {
+            "language": "Hindi",
+            "code": "hi"
+        },
+        {
+            "language": "Spanish",
+            "code": "es"
+        },
+        ...,
+        ...,
+
     ]
     ================================================================================
 
