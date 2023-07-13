@@ -120,89 +120,88 @@ def challenge_seven()
         .map {|staff_member| {staff_id: staff_member["staff_id"], first_name: staff_member["first_name"], last_name: staff_member["last_name"]}}
 end
 
-puts "Please enter a number corresponding to a challenges 1-7 or b1/b2 for bonuses, press x to quit.."
-while 1
-    choice = gets.chomp
-    case choice
-        when "1"
-            puts big_divider
-            puts "Challenge 1: The 3 most commonly used languages with respective number of parents: "
-            puts small_divider
-            challenge_one.each do |language, count|
-                puts "#{language}: #{count}"
-            end
-            puts big_divider
-        when "2"
-            puts big_divider
-            puts "Challenge 2: List of students with no cell phone number:"
-            puts small_divider
-            challenge_two.each do |student|
-                puts "student_id: #{student[:student_id]}, first_name: #{student[:FirstName]}, last_name: #{student[:LastName]}"
-            end
-            puts big_divider
-        when "3"
-            puts big_divider
-            puts "Challenge 3: List of students who are enrolled in Physics 9."
-            puts small_divider
-            challenge_three.each do |student|
-                puts "student_id: #{student[:student_id]}, first_name: #{student[:FirstName]}, last_name: #{student[:LastName]}"
-            end
-            puts big_divider
-        when "4"
-            puts big_divider
-            puts "Challenge 4: List of students with no parents listed or no contact info."
-            puts small_divider
-            challenge_four.each do |student|
-                puts "student_id: #{student["student_id"]}, first_name: #{student["FirstName"]}, last_name: #{student["LastName"]}"
-            end
-            puts big_divider
-        when "5"
-            #TODO: really check this and verify that it is accurate. If so, go back and redo all functions with checks to see if the return is empty, if so output a standard message.
-            puts big_divider
-            puts "Challenge 5: List of sections with no students enrolled."
-            puts small_divider
-            challenge_five.each do |section|
-                puts "section_id: #{section["section_id"]} course_name: #{section["course_name"]}"
-            end
-            puts big_divider
-        when "6"
-            puts big_divider
-            puts "Challenge 6: List of sections and students in each section."
-            puts small_divider
-            challenge_six.each do |section|
-                puts "section_id: #{section[:section_id]} course_name: #{section[:course_name]}"
-                puts "student_ids: #{section[:student_ids]}"
-            end
-            puts big_divider
-        when "7"
-            puts big_divider
-            puts "Challenge 7: List of staff members attached to a section."
-            puts small_divider
-            challenge_seven.each do |staff_member|
-                puts "staff_id: #{staff_member[:staff_id]} first_name: #{staff_member[:first_name]} last_name: #{staff_member[:last_name]}"
-            end
-            puts big_divider
-        when "x"
-            is_playing = false;
-            break
-        else 
-            puts "Error: You seem to have typed an invalid choice. Please enter a number inluding 1-7 or enter b1 or b2 for bonuses"
+def challenge_bonus_one()
+    lang_codes = parse_csv_to_list_of_hashes("./data/language_codes.csv")
+    parents = parse_csv_to_list_of_hashes("./data/parents.csv")
+
+    parent_langs = parents.map {|parent| parent["language"]}.uniq
+
+    languages_with_codes = []
+
+    parent_langs.each do |lang|
+        if !lang || lang.empty?
             next
+        end
+            lang_code = lang_codes.find {|code| code["English"] == lang}
+        if lang_code
+            languages_with_codes << [lang, lang_code["alpha2"]]
+        end
     end
-    puts "Make another choice or press x to quit..."
+    return languages_with_codes
 end
 
 
 
+puts "Please enter a number corresponding to a challenges 1-7 or b1/b2 for bonuses, press x to quit.."
+while true
+    title = ""
+    data = []
+    choice = gets.chomp
+    case choice
+        when "1"
+            title = "Challenge 1: The 3 most commonly used languages with respective number of parents: "
+            challenge_one.each do |language, count|
+                data << "#{language}: #{count}"
+            end
+        when "2"
+            title = "Challenge 2: List of students with no cell phone number:"
+            challenge_two.each do |student|
+                data << "student_id: #{student[:student_id]}, first_name: #{student[:FirstName]}, last_name: #{student[:LastName]}"
+            end
+        when "3"
+            title = "Challenge 3: List of students who are enrolled in Physics 9."
+            challenge_three.each do |student|
+                data << "student_id: #{student[:student_id]}, first_name: #{student[:FirstName]}, last_name: #{student[:LastName]}"
+            end
+        when "4"
+            title = "Challenge 4: List of students with no parents listed or no contact info."
+            challenge_four.each do |student|
+                data << "student_id: #{student["student_id"]}, first_name: #{student["FirstName"]}, last_name: #{student["LastName"]}"
+            end
+        when "5"
+            #TODO: really check this and verify that it is accurate. If so, go back and redo all functions with checks to see if the return is empty, if so output a standard message.
+            title =  "Challenge 5: List of sections with no students enrolled."
+            challenge_five.each do |section|
+                data << "section_id: #{section["section_id"]} course_name: #{section["course_name"]}"
+            end
+        when "6"
+            title =  "Challenge 6: List of sections and students in each section."
+            challenge_six.each do |section|
+                data << "section_id: #{section[:section_id]} course_name: #{section[:course_name]}\nstudent_ids: #{section[:student_ids]}"
+            end
+        when "7"
+            title = "Challenge 7: List of staff members attached to a section."
+            challenge_seven.each do |staff_member|
+                data << "staff_id: #{staff_member[:staff_id]} first_name: #{staff_member[:first_name]} last_name: #{staff_member[:last_name]}"
+            end
+        when "b1"
+            title = "Language mapping for language codes found in parents.csv"
+            challenge_bonus_one.each do |lang, code|
+                data << "#{lang}: #{code}"
+            end
+        when "x"
+            is_playing = false;
+            break
 
+        else 
+            puts "Error: You seem to have typed an invalid choice. Please enter a number inluding 1-7 or enter b1 or b2 for bonuses"
+            next
+    end
 
+    puts big_divider
+    puts title
+    puts small_divider
+    puts data
 
-
-
-
-
-
-
-
-
-
+    puts "Make another choice or press x to quit..."
+end
