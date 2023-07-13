@@ -13,7 +13,7 @@ I decided to take the challenge of doing this in Ruby, which I hadn't touched be
 
 # Documentation
 
-## Challenges
+## Printing Challenges:
 In the console app, typing `1` then `return` will show the output of my solution for Challenge 1.
 
 !!! The output will print to the console, but a JSON will also be generated into the outputs folder with the corresponding challenge name. !!!
@@ -22,7 +22,7 @@ Typing `2` then `return` will show/generate challenge 2, etc.
 
 You can choose as many challenges as you want before quitting the app by typing `x` then `return`.
 
-## Dont forget the Bonuses!
+## Printing Bonuses:
 In the console app, if you type `b1` or `b2` followed by `return` you will see the respective bonus solutions.
 
 ## Example Outputs
