@@ -19,13 +19,17 @@ module Challenge_Methods
     end
 
     def self.challenge_three()
-        physics_9_section_ids = CSV_Handler.parse_csv_to_list_of_hashes("./data/sections.csv")
+        sections = CSV_Handler.parse_csv_to_list_of_hashes("./data/sections.csv")
+        rosters = CSV_Handler.parse_csv_to_list_of_hashes("./data/rosters.csv")
+        students = CSV_Handler.parse_csv_to_list_of_hashes("./data/students.csv")
+
+        physics_9_section_ids = sections
             .select {|section| section["course_name"]=="Physics 9"}
             .map {|section| section["section_id"]}
-        physics_9_rosters = CSV_Handler.parse_csv_to_list_of_hashes("./data/rosters.csv")
+        physics_9_rosters = rosters
             .select {|roster| physics_9_section_ids.include?(roster["section_id"])}
             .map {|roster| roster["student_id"]}
-        return students_enrolled_physics_9 = CSV_Handler.parse_csv_to_list_of_hashes("./data/students.csv")
+        return students_enrolled_physics_9 = students
             .select {|student| physics_9_rosters.include?(student["student_id"])}
             .map {|student| {student_id: student["student_id"], FirstName: student["FirstName"], LastName:student["LastName"]}}
     end
