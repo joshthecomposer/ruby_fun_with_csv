@@ -8,10 +8,8 @@ This console app was developed in Ruby 3.0.0
 3. In your console, type `ruby main.rb`
 4. Now that that console is started, follow the prompts to view my solutions.
 
-## Examples
-Running `ruby main.rb` will present you with:
-`Please enter a number corresponding to a challenge (1-7) for bonuses enter b1 or b2, press x to quit..`
-Typing 1 and hitting `return` will present you with:
+## Challenges
+In the console app, typing `1` then `return` will show the output of my solution for Challenge 1. The output should be:
 ```
 ================================================================================
 Challenge 1: The 3 most commonly used languages with respective number of parents: 
@@ -19,15 +17,9 @@ Hindi: 57
 Urdu: 49
 English: 47
 ================================================================================
+Make another choice (1-7, b1, b2) or press x to quit...
 ```
-Typing another choice such as `b1` will yield:
-```
-================================================================================
-Challenge b1: Language mapping for language codes found in parents.csv
-Hindi: hi
-Spanish: es
-Urdu: ur
-English: en
-================================================================================
-```
-Hitting "x" or "X" and `return` will exit the console app.
+You can choose as many challenges as you want before quitting the app by typing `x` then `return`
+
+## Dont forget the Bonuses!
+In the console app, if you type `b1` or `b2` followed by `return` you will see the respective bonus solutions.
