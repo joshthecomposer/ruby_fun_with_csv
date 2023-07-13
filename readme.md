@@ -1,6 +1,6 @@
 # Ruby CSV Fun
 
-*This console app was developed in* **Ruby 3.0.0*
+*This console app was developed in* **Ruby 3.0.0**
 
 ## Goals/Thoughts/Struggles
 I decided to take the challenge of doing this in Ruby, which I hadn't touched before this past weekend. I feel I have a much better grasp on Ruby syntax and I observed various similarities between Ruby and the other languages I know. The Enumerable helpers such as .map() and .select() were a welcome familiarity in particular. And the similarity to Python--my first language--was a welcome one.
