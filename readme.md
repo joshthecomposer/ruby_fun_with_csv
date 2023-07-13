@@ -6,7 +6,7 @@
 1. [Go here](https://www.ruby-lang.org/en/documentation/installation/) and follow the instructions for installing Ruby on your system.
 2. Clone this repo and cd into the root directory of the project.
 3. In your console, type `ruby main.rb`
-4. Now that that console app is started, follow the prompts to view my solutions.
+4. Once the console app is started, follow the prompts to view my solutions.
 
 # Documentation
 

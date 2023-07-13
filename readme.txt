@@ -6,7 +6,7 @@ This console app was developed in Ruby 3.0.0
 1. Go to "https://www.ruby-lang.org/en/documentation/installation/" and follow the instructions for installing Ruby on your system.
 2. Clone this repo and cd into the root directory of the project.
 3. In your console, type "ruby main.rb"
-4. Now that that console app is started, follow the prompts to view my solutions.
+4. Once the console app is started, follow the prompts to view my solutions.
 
 -Challenges-
 In the console app, typing 1 then hitting return will show the output of my solution for Challenge 1. The output should be:
