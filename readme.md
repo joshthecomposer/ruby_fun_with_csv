@@ -13,7 +13,7 @@ I decided to take the challenge of doing this in Ruby, which I hadn't touched be
 
 # Documentation
 
-## Printing Challenges:
+## How to Print Challenges:
 In the console app, typing `1` then `return` will show the output of my solution for Challenge 1.
 
 **!!! The output will print to the console, but a JSON will also be generated into the outputs folder with the corresponding challenge name**
