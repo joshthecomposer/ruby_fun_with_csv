@@ -29,7 +29,7 @@ English,en
 Esperanto,eo
 Estonian,et
 Ewe,ee
-Filipino (Tagalog),fil
+Filipinofil
 Finnish,fi
 French,fr
 Frisian,fy
@@ -79,19 +79,19 @@ Malayalam,ml
 Maltese,mt
 Maori,mi
 Marathi,mr
-Meiteilon (Manipuri),mni-Mtei
+Meiteilon,mni-Mtei
 Mizo,lus
 Mongolian,mn
-Myanmar (Burmese),my
+Myanmar,my
 Nepali,ne
 Norwegian,no
-Nyanja (Chichewa),ny
-Odia (Oriya),or
+Nyanja,ny
+Odia,or
 Oromo,om
 Pashto,ps
 Persian,fa
 Polish,pl
-Portuguese (Portugal, Brazil),pt
+Portuguese,pt
 Punjabi,pa
 Quechua,qu
 Romanian,ro
@@ -112,7 +112,7 @@ Spanish,es
 Sundanese,su
 Swahili,sw
 Swedish,sv
-Tagalog (Filipino),tl
+Tagalog,tl
 Tajik,tg
 Tamil,ta
 Tatar,tt

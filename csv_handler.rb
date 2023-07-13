@@ -1,7 +1,7 @@
 module CSV_Handler
     def self.parse_csv_to_list_of_hashes(input)
-        column_names=[]
-        csv_to_array =[]
+        column_names = []
+        csv_to_array = []
         File.open(input, "r") do |file|
             file.each_line do |line|
                 vals = line.chomp().split(",")
