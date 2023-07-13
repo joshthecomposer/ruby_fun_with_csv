@@ -30,23 +30,23 @@ module Challenge_Methods
             .map {|student| {student_id: student["student_id"], FirstName: student["FirstName"], LastName:student["LastName"]}}
     end
 
-    #TODO: read the csv files just once.
     def self.challenge_four()
-        parents_student_ids = CSV_Handler.parse_csv_to_list_of_hashes("./data/parents.csv")
+        parents = CSV_Handler.parse_csv_to_list_of_hashes("./data/parents.csv")
+        students = CSV_Handler.parse_csv_to_list_of_hashes("./data/students.csv")
+
+        parents_student_ids = parents
             .map {|parent| parent["student_id"]}
 
-        students = CSV_Handler.parse_csv_to_list_of_hashes("./data/students.csv")
+        students_missing_parents = students
             .select {|student| !parents_student_ids.include?(student["student_id"])}
         
-        parents_student_ids = CSV_Handler.parse_csv_to_list_of_hashes("./data/parents.csv")
+        parents_student_ids_no_info = parents
             .select {|parent| (parent["email"].nil? || parent["email"].empty?) && (parent["mobile"].nil? || parent["mobile"].empty?)}
             .map {|parent| parent["student_id"]}
 
-        return students.concat(
-            CSV_Handler.parse_csv_to_list_of_hashes("./data/students.csv")
-                .select {|student| parents_student_ids.include?(student["student_id"])}
+        return students_missing_parents.concat(
+            students.select {|student| parents_student_ids_no_info.include?(student["student_id"])}
         )
-        .map {|student| {student_id: student["student_id"], FirstName: student["FirstName"], LastName:student["LastName"]}}
     end
 
     def self.challenge_five()
@@ -61,8 +61,6 @@ module Challenge_Methods
         return sections_no_students
     end
 
-
-    # TODO: rewrite this to be more understandable
     def self.challenge_six()
         rosters = CSV_Handler.parse_csv_to_list_of_hashes("./data/rosters.csv")
         sections = CSV_Handler.parse_csv_to_list_of_hashes("./data/sections.csv")
@@ -139,7 +137,7 @@ module Challenge_Methods
                 end
             end
         end
-    
+
         return common_num
     end
 end
