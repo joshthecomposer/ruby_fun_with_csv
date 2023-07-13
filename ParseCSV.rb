@@ -115,68 +115,94 @@ def challenge_seven()
     sections = parse_csv_to_list_of_hashes("./data/sections.csv")
         .map {|section| section["staff_id"]}
 
-    puts sections
-    staff = parse_csv_to_list_of_hashes("./data/staff.csv")
+    return parse_csv_to_list_of_hashes("./data/staff.csv")
         .select {|staff_member| sections.include?(staff_member["staff_id"])}
         .map {|staff_member| {staff_id: staff_member["staff_id"], first_name: staff_member["first_name"], last_name: staff_member["last_name"]}}
-    puts staff
 end
 
-puts big_divider
-puts "Challenge 1: The 3 most commonly used languages with respective number of parents: "
-puts small_divider
-challenge_one.each do |language, count|
-    puts "#{language}: #{count}"
+puts "Please enter a number corresponding to a challenges 1-7 or b1/b2 for bonuses, press x to quit.."
+while 1
+    choice = gets.chomp
+    case choice
+        when "1"
+            puts big_divider
+            puts "Challenge 1: The 3 most commonly used languages with respective number of parents: "
+            puts small_divider
+            challenge_one.each do |language, count|
+                puts "#{language}: #{count}"
+            end
+            puts big_divider
+        when "2"
+            puts big_divider
+            puts "Challenge 2: List of students with no cell phone number:"
+            puts small_divider
+            challenge_two.each do |student|
+                puts "student_id: #{student[:student_id]}, first_name: #{student[:FirstName]}, last_name: #{student[:LastName]}"
+            end
+            puts big_divider
+        when "3"
+            puts big_divider
+            puts "Challenge 3: List of students who are enrolled in Physics 9."
+            puts small_divider
+            challenge_three.each do |student|
+                puts "student_id: #{student[:student_id]}, first_name: #{student[:FirstName]}, last_name: #{student[:LastName]}"
+            end
+            puts big_divider
+        when "4"
+            puts big_divider
+            puts "Challenge 4: List of students with no parents listed or no contact info."
+            puts small_divider
+            challenge_four.each do |student|
+                puts "student_id: #{student["student_id"]}, first_name: #{student["FirstName"]}, last_name: #{student["LastName"]}"
+            end
+            puts big_divider
+        when "5"
+            #TODO: really check this and verify that it is accurate. If so, go back and redo all functions with checks to see if the return is empty, if so output a standard message.
+            puts big_divider
+            puts "Challenge 5: List of sections with no students enrolled."
+            puts small_divider
+            challenge_five.each do |section|
+                puts "section_id: #{section["section_id"]} course_name: #{section["course_name"]}"
+            end
+            puts big_divider
+        when "6"
+            puts big_divider
+            puts "Challenge 6: List of sections and students in each section."
+            puts small_divider
+            challenge_six.each do |section|
+                puts "section_id: #{section[:section_id]} course_name: #{section[:course_name]}"
+                puts "student_ids: #{section[:student_ids]}"
+            end
+            puts big_divider
+        when "7"
+            puts big_divider
+            puts "Challenge 7: List of staff members attached to a section."
+            puts small_divider
+            challenge_seven.each do |staff_member|
+                puts "staff_id: #{staff_member[:staff_id]} first_name: #{staff_member[:first_name]} last_name: #{staff_member[:last_name]}"
+            end
+            puts big_divider
+        when "x"
+            is_playing = false;
+            break
+        else 
+            puts "Error: You seem to have typed an invalid choice. Please enter a number inluding 1-7 or enter b1 or b2 for bonuses"
+            next
+    end
+    puts "Make another choice or press x to quit..."
 end
-puts big_divider
 
-puts big_divider
-puts "Challenge 2: List of students with no cell phone number:"
-puts small_divider
-challenge_two.each do |student|
-    puts "student_id: #{student[:student_id]}, first_name: #{student[:FirstName]}, last_name: #{student[:LastName]}"
-end
-puts big_divider
 
-puts big_divider
-puts "Challenge 3: List of students who are enrolled in Physics 9."
-puts small_divider
-challenge_three.each do |student|
-    puts "student_id: #{student[:student_id]}, first_name: #{student[:FirstName]}, last_name: #{student[:LastName]}"
-end
-puts big_divider
 
-puts big_divider
-puts "Challenge 4: List of students with no parents listed or no contact info."
-puts small_divider
-challenge_four.each do |student|
-    puts "student_id: #{student["student_id"]}, first_name: #{student["FirstName"]}, last_name: #{student["LastName"]}"
-end
-puts big_divider
 
-#TODO: really check this and verify that it is accurate. If so, go back and redo all functions with checks to see if the return is empty, if so output a standard message.
-puts big_divider
-puts "Challenge 5: List of sections with no students enrolled."
-puts small_divider
-challenge_five.each do |section|
-    puts "section_id: #{section["section_id"]} course_name: #{section["course_name"]}"
-end
-puts big_divider
 
-puts big_divider
-puts "Challenge 6: List of sections and students in each section."
-puts small_divider
-challenge_six.each do |section|
-    puts "section_id: #{section[:section_id]} course_name: #{section[:course_name]}"
-    puts "student_ids: #{section[:student_ids]}"
-end
-puts big_divider
 
-puts big_divider
-puts "Challenge 7: List of staff members attached to a section."
-puts small_divider
-challenge_seven.each do |staff_member|
-    puts "staff_id: #{staff_member[:staff_id]} first_name: #{staff_member[:first_name]} last_name: #{staff_member[:last_name]}"
-end
 
-challenge_seven
+
+
+
+
+
+
+
+
