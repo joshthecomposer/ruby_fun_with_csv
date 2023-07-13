@@ -40,55 +40,99 @@ Challenge 1:
 
     ================================================================================
     Challenge 1: The 3 most commonly used languages with total number of parents: 
-    Hindi: 57
-    Urdu: 49
-    English: 47
+    [
+        [
+            "Hindi",
+            57
+        ],
+        [
+            "Urdu",
+            49
+        ],
+        [
+            "English",
+            47
+        ]
+    ]
     ================================================================================
 
 Challenge 2: 
 
     ================================================================================
     Challenge 2: List of students with no cell phone number:
-    student_id: 208, first_name: Barney, last_name: Nitzsche
-    student_id: 220, first_name: Billy, last_name: Franecki
-    student_id: 222, first_name: Demetrius, last_name: Barton
-    ...
-    ...
+    [
+        {
+            "FirstName": "Barney",
+            "LastName": "Nitzsche",
+            "student_id": "208"
+        },
+        {
+            "FirstName": "Billy",
+            "LastName": "Franecki",
+            "student_id": "220"
+        },
+        ...,
+        ...
+    ]
 
 Challenge 3: 
 
     ================================================================================
     Challenge 3: List of students who are enrolled in Physics 9.
-    student_id: 220, first_name: Billy, last_name: Franecki
-    student_id: 222, first_name: Demetrius, last_name: Barton
-    student_id: 225, first_name: Marielle, last_name: Pfannerstill
-    ...
-    ...
+    [
+        {
+            "student_id": "220",
+            "FirstName": "Billy",
+            "LastName": "Franecki"
+        },
+        {
+            "student_id": "222",
+            "FirstName": "Demetrius",
+            "LastName": "Barton"
+        },
+        ...,
+        ...,
+    ]
 
 Challenge 4:
 
     ================================================================================
     Challenge 4: List of students with no parents listed or no contact info.
-    student_id: 217, first_name: John, last_name: Beer
-    student_id: 225, first_name: Marielle, last_name: Pfannerstill
-    student_id: 233, first_name: Karoline, last_name: Robel
-    student_id: 263, first_name: Loriann, last_name: Mueller
+    [
+        {
+            "student_id": "217",
+            "first_name": "John",
+            "last_name": "Beer"
+        },
+        {
+            "student_id": "225",
+            "first_name": "Marielle",
+            "last_name": "Pfannerstill"
+        },
+        ...,
+        ...,
+    ]
 
 Challenge 5:
 
-    ================================================================================
-    Challenge 5: List of sections with no students enrolled.
-    ================================================================================
+    [
+
+    ]
 
 Challenge 6: 
 
     ================================================================================
     Challenge 6: List of sections and students in each section.
-    section_id: 150_25
-    course_name: Physics 9
-
-    student_ids: ["202", "207", "210", "212", ..., ...]
-
+    {
+        "section_id": "150_45",
+        "course_name": "Physics 1",
+        "student_ids": [ 
+            "204", 
+            "206", 
+            ..., 
+            ...
+        ]
+    }
     --------------------------------------------------------------------------------
     section_id: 150_26
     course_name: Chemistry 9
@@ -101,22 +145,35 @@ Challenge 7:
 
     ================================================================================
     Challenge 7: List of staff members attached to a section.
+    [
+
+    ]
     ================================================================================
 
 Bonus 1:
 
     ================================================================================
     Challenge b1: Language mapping for language codes found in parents.csv
-    Hindi: hi
-    Spanish: es
-    Urdu: ur
-    English: en
-    Portuguese: pt
+    [
+        "Hindi: hi",
+        "Spanish: es",
+        "Urdu: ur",
+        "English: en",
+        "Portuguese: pt"
+    ]
     ================================================================================
 
 Bonus 2: 
 
     ================================================================================
     Challenge b2: Phone numbers which appear in two or more files:
-    Phone Number: 4223045198 Files: ["parents.csv", "staff.csv"]
+    [
+        {
+            "phone_number": "4223045198",
+            "files": [
+            "parents.csv",
+            "staff.csv"
+            ]
+        }
+    ]
     ================================================================================
